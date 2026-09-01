@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const models_1 = require("../models");
+const createCrudRouter_1 = require("./createCrudRouter");
+const router = (0, express_1.Router)();
+router.use('/users', (0, createCrudRouter_1.createCrudRouter)(models_1.User));
+router.use('/teams', (0, createCrudRouter_1.createCrudRouter)(models_1.Team));
+router.use('/activities', (0, createCrudRouter_1.createCrudRouter)(models_1.Activity));
+router.use('/leaderboard', (0, createCrudRouter_1.createCrudRouter)(models_1.Leaderboard));
+router.use('/workouts', (0, createCrudRouter_1.createCrudRouter)(models_1.Workout));
+exports.default = router;
